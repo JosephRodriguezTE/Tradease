@@ -154,23 +154,16 @@ nav {
 }
 .nav-logo {
   font-family: var(--font-display); font-size: 26px; font-weight: 900;
-  color: var(--orange);
-  margin-right: 32px; cursor: pointer;
+  color: var(--ink); margin-right: 32px; cursor: pointer;
   display: flex; align-items: center; gap: 10px;
-  text-transform: uppercase; letter-spacing: .03em;
+  text-transform: uppercase; letter-spacing: .02em;
   transition: opacity .12s;
-  /* Orange fill with thin black outline */
-  -webkit-text-stroke: 1px #000;
-  paint-order: stroke fill;
-  text-shadow: 0 1px 2px rgba(0,0,0,.18);
 }
 .nav-logo:hover { opacity: .82; }
 .nav-logo-img { width: 34px; height: 34px; border-radius: 9px; object-fit: cover; flex-shrink: 0; }
-.nav-logo-dot {
-  width: 10px; height: 10px; background: #000;
+.nav-logo-dot { 
+  width: 10px; height: 10px; background: var(--orange); 
   border-radius: 50%; display: inline-block;
-  -webkit-text-stroke: 0;
-  flex-shrink: 0;
 }
 .nav-links { display: flex; align-items: center; gap: 4px; flex: 1; }
 .nav-link {
@@ -250,7 +243,7 @@ footer {
 
 .hero {
   background: transparent;
-  padding: 36px 0 60px;
+  padding: 100px 0 80px;
   position: relative; overflow: hidden;
 }
 /* Darker overlay — new video needs more coverage so all text is crystal clear */
@@ -280,19 +273,19 @@ footer {
   display: inline-flex; align-items: center; gap: 8px;
   background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.30);
   backdrop-filter: blur(10px);
-  padding: 7px 14px; border-radius: 50px;
+  padding: 8px 16px; border-radius: 50px;
   font-size: 13px; font-weight: 600; color: rgba(255,255,255,.95);
-  margin-bottom: 18px; box-shadow: var(--shadow-sm);
+  margin-bottom: 28px; box-shadow: var(--shadow-sm);
   text-shadow: none;
 }
 .hero-eyebrow span { color: var(--orange); }
 .hero h1 {
-  margin-bottom: 14px; letter-spacing: -.02em; color: white;
+  margin-bottom: 20px; letter-spacing: -.02em; color: white;
   text-shadow: 0 1px 0 rgba(0,0,0,.9), 0 2px 12px rgba(0,0,0,.5);
 }
 .hero h1 em { color: var(--orange); font-style: normal; }
 .hero > .container > .hero-content > p {
-  font-size: 18px; margin-bottom: 24px; color: rgba(255,255,255,.90);
+  font-size: 19px; margin-bottom: 40px; color: rgba(255,255,255,.90);
   text-shadow: 0 1px 3px rgba(0,0,0,.8), 0 0 20px rgba(0,0,0,.4);
 }
 
@@ -699,9 +692,9 @@ footer {
         <div class="eyebrow">Services</div>
         <h2>What do you need?</h2>
         <div class="divider"></div>
-        <p>Browse service categories and find a pro near you. <span style="background:rgba(255,107,43,.12);color:var(--orange);font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase;vertical-align:middle;">Sample</span></p>
+        <p>Browse our most popular service categories and find a pro near you.</p>
       </div>
-      <div class="categories-grid" style="grid-template-columns:repeat(5,1fr);">
+      <div class="categories-grid">
         <div class="category-card" onclick="handleCategoryClick('Plumbing')">
           <span class="cat-icon">🔧</span>
           <div class="cat-name">Plumbing</div>
@@ -725,22 +718,6 @@ footer {
         <div class="category-card" onclick="handleCategoryClick('Cleaning')">
           <span class="cat-icon">🧹</span>
           <div class="cat-name">Cleaning</div>
-        </div>
-        <div class="category-card" onclick="handleCategoryClick('Mechanical')">
-          <span class="cat-icon">⚙️</span>
-          <div class="cat-name">Mechanical</div>
-        </div>
-        <div class="category-card" onclick="handleCategoryClick('Painting')">
-          <span class="cat-icon">🖌️</span>
-          <div class="cat-name">Painting</div>
-        </div>
-        <div class="category-card" onclick="handleCategoryClick('Carpentry')">
-          <span class="cat-icon">🪵</span>
-          <div class="cat-name">Carpentry</div>
-        </div>
-        <div class="category-card" onclick="handleCategoryClick('Landscaping')">
-          <span class="cat-icon">🌿</span>
-          <div class="cat-name">Landscaping</div>
         </div>
       </div>
     </div>
@@ -891,16 +868,20 @@ footer {
   <div class="profile-header">
     <div class="container">
       <div class="profile-header-inner">
-        <div class="profile-avatar-lg" style="background:linear-gradient(135deg,#FF6B2B,#E05520);">—</div>
+        <div class="profile-avatar-lg" style="background:linear-gradient(135deg,#FF6B2B,#E05520);">MR</div>
         <div>
-          <div class="profile-badges" id="profile-badges"></div>
-          <div class="profile-name" style="font-family:var(--font-display);" id="profile-display-name">—</div>
-          <div class="profile-trade" id="profile-display-trade">—</div>
-          <div class="profile-loc" style="margin-top:6px;" id="profile-display-loc"></div>
-          <div class="rating-row" style="margin-top:12px;" id="profile-rating-row">
-            <div class="stars" style="font-size:18px;" id="profile-stars">☆☆☆☆☆</div>
-            <div class="rating-val" style="font-size:18px;" id="profile-rating-val">New</div>
-            <div class="reviews-ct" id="profile-reviews-ct">— be the first to review</div>
+          <div class="profile-badges">
+            <span class="badge badge-orange">🔝 Top Pro</span>
+            <span class="badge badge-green">✓ Verified</span>
+            <span class="badge badge-grey">🏅 Licensed & Insured</span>
+          </div>
+          <div class="profile-name" style="font-family:var(--font-display);">Mike Rodriguez</div>
+          <div class="profile-trade">Master Plumber · Rodriguez Plumbing LLC</div>
+          <div class="profile-loc" style="margin-top:6px;">📍 Brooklyn, NY · Serves 5 boroughs</div>
+          <div class="rating-row" style="margin-top:12px;">
+            <div class="stars" style="font-size:18px;">★★★★★</div>
+            <div class="rating-val" style="font-size:18px;">4.9</div>
+            <div class="reviews-ct">(214 reviews)</div>
           </div>
         </div>
         <div class="profile-cta">
@@ -920,31 +901,81 @@ footer {
     <div class="profile-body">
       <!-- Main Content -->
       <div>
-        <!-- About — loaded dynamically -->
+        <!-- About -->
         <div class="profile-section">
           <h3>About</h3>
-          <p id="profile-about-text" style="color:var(--ink-soft);font-size:15px;line-height:1.75;">This contractor hasn't added a description yet.</p>
+          <p>With over 15 years of experience serving the New York City area, Rodriguez Plumbing LLC is your trusted partner for residential and commercial plumbing needs. From emergency repairs to full bathroom renovations, we handle it all with precision, speed, and a smile.</p>
+          <p style="margin-top:12px;">We are fully licensed, bonded, and insured. Our team of master plumbers is available 7 days a week for both scheduled appointments and emergency calls.</p>
         </div>
 
-        <!-- Portfolio — loaded dynamically -->
-        <div class="profile-section" id="profile-portfolio-section" style="display:none;">
+        <!-- Portfolio -->
+        <div class="profile-section">
           <h3>Portfolio</h3>
-          <div class="portfolio-grid" id="profile-portfolio-grid"></div>
+          <div class="portfolio-grid">
+            <div class="portfolio-img" style="background:linear-gradient(135deg,#FF6B2B,#E05520);">🚿</div>
+            <div class="portfolio-img" style="background:linear-gradient(135deg,#3B82F6,#1D4ED8);">🔧</div>
+            <div class="portfolio-img" style="background:linear-gradient(135deg,#10B981,#059669);">🪠</div>
+            <div class="portfolio-img" style="background:linear-gradient(135deg,#8B5CF6,#6D28D9);">🚰</div>
+            <div class="portfolio-img" style="background:linear-gradient(135deg,#F59E0B,#D97706);">🏠</div>
+            <div class="portfolio-img" style="background:linear-gradient(135deg,#EC4899,#BE185D);">⚙️</div>
+          </div>
         </div>
 
-        <!-- Stats — loaded from real profile -->
-        <div class="profile-section" id="profile-stats-section" style="display:none;">
+        <!-- Stats -->
+        <div class="profile-section">
           <h3>Stats</h3>
-          <div class="stats-row" id="profile-stats-row"></div>
+          <div class="stats-row">
+            <div class="stat-box">
+              <div class="stat-box-val">428</div>
+              <div class="stat-box-lbl">Jobs Completed</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-box-val">2,140</div>
+              <div class="stat-box-lbl">Profile Views</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-box-val">4.9 ⭐</div>
+              <div class="stat-box-lbl">Avg. Rating</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-box-val">15 yrs</div>
+              <div class="stat-box-lbl">Experience</div>
+            </div>
+          </div>
         </div>
 
-        <!-- Reviews — loaded from Supabase -->
+        <!-- Reviews -->
         <div class="profile-section">
           <h3>Customer Reviews</h3>
-          <div id="profile-reviews-list">
-            <div style="padding:24px;text-align:center;color:var(--ink-soft);font-size:14px;">
-              No reviews yet — be the first to book and leave a review!
+          <div class="card review-card">
+            <div class="review-header">
+              <div>
+                <div class="reviewer-name">Amanda K.</div>
+                <div class="stars" style="font-size:13px;">★★★★★</div>
+              </div>
+              <div class="review-date">March 12, 2025</div>
             </div>
+            <div class="review-text">Mike was incredible — showed up on time, diagnosed the issue in minutes, and had everything fixed within an hour. Very professional and reasonably priced. Highly recommend!</div>
+          </div>
+          <div class="card review-card">
+            <div class="review-header">
+              <div>
+                <div class="reviewer-name">James T.</div>
+                <div class="stars" style="font-size:13px;">★★★★★</div>
+              </div>
+              <div class="review-date">February 28, 2025</div>
+            </div>
+            <div class="review-text">Had a burst pipe at 2am — Mike picked up and was there within 45 minutes. Saved our floors. He's our go-to plumber for everything now.</div>
+          </div>
+          <div class="card review-card">
+            <div class="review-header">
+              <div>
+                <div class="reviewer-name">Lisa M.</div>
+                <div class="stars" style="font-size:13px;">★★★★☆</div>
+              </div>
+              <div class="review-date">January 14, 2025</div>
+            </div>
+            <div class="review-text">Great work on our bathroom renovation. Took a little longer than expected but the quality was excellent. Would definitely hire again.</div>
           </div>
         </div>
       </div>
@@ -1254,23 +1285,24 @@ footer {
 
   <section class="section" style="background:var(--nardo-light); margin-top:64px;">
     <div class="container text-center">
-      <div class="eyebrow">Why Tradease</div>
-      <h2 style="margin-bottom:48px;">Built for Speed. Built for Trust.</h2>
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
-        <div class="card" style="padding:36px;">
-          <div style="font-size:36px;margin-bottom:12px;">⚡</div>
-          <h4 style="margin-bottom:8px;">Fast Booking</h4>
-          <div style="font-size:14px;color:var(--ink-soft);line-height:1.7;">Find and book a trusted local contractor in seconds — no phone tag, no waiting.</div>
+      <div class="eyebrow">By the Numbers</div>
+      <h2 style="margin-bottom:48px;">Tradease at a Glance</h2>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:24px;">
+        <div class="card" style="padding:32px;">
+          <div style="font-family:var(--font-display); font-size:40px; font-weight:800; color:var(--orange);">12K+</div>
+          <div style="font-size:14px; color:var(--ink-soft); margin-top:4px;">Verified Contractors</div>
         </div>
-        <div class="card" style="padding:36px;">
-          <div style="font-size:36px;margin-bottom:12px;">🛡️</div>
-          <h4 style="margin-bottom:8px;">Vetted Pros</h4>
-          <div style="font-size:14px;color:var(--ink-soft);line-height:1.7;">Every contractor on Tradease is reviewed, rated, and accountable — so you know exactly who's coming.</div>
+        <div class="card" style="padding:32px;">
+          <div style="font-family:var(--font-display); font-size:40px; font-weight:800; color:var(--orange);">98K+</div>
+          <div style="font-size:14px; color:var(--ink-soft); margin-top:4px;">Jobs Completed</div>
         </div>
-        <div class="card" style="padding:36px;">
-          <div style="font-size:36px;margin-bottom:12px;">✅</div>
-          <h4 style="margin-bottom:8px;">Done Right</h4>
-          <div style="font-size:14px;color:var(--ink-soft);line-height:1.7;">Real reviews from real customers. If a pro doesn't deliver, you'll know before you book.</div>
+        <div class="card" style="padding:32px;">
+          <div style="font-family:var(--font-display); font-size:40px; font-weight:800; color:var(--orange);">4.9★</div>
+          <div style="font-size:14px; color:var(--ink-soft); margin-top:4px;">Average Rating</div>
+        </div>
+        <div class="card" style="padding:32px;">
+          <div style="font-family:var(--font-display); font-size:40px; font-weight:800; color:var(--orange);">50+</div>
+          <div style="font-size:14px; color:var(--ink-soft); margin-top:4px;">Cities Served</div>
         </div>
       </div>
     </div>
@@ -1614,16 +1646,30 @@ footer {
 // TRADE_MAP keys (case-insensitive string match is fine).
 // ================================================================
 const TRADE_MAP = {
-  'Plumbing':    { icon:'🔧', keywords:['plumb','pipe','leak','drain','faucet','toilet','water heater','sink','sewer','flood','clog'], headline:'Plumbers Near You', sub:'Licensed plumbers ready to fix leaks, clogs, and more.' },
-  'Electrical':  { icon:'⚡', keywords:['electric','wire','outlet','breaker','panel','light','switch','circuit','power','wiring','generator'], headline:'Electricians Near You', sub:'Certified electricians for installs, repairs, and upgrades.' },
-  'HVAC':        { icon:'❄️', keywords:['hvac','heat','cool','ac','air','furnace','duct','ventil','thermostat','boiler','radiator'], headline:'HVAC Specialists Near You', sub:'Keep your home comfortable year-round.' },
-  'Handyman':    { icon:'🔨', keywords:['handyman','fix','repair','assemble','install','door','window','drywall','shelf','fence','deck'], headline:'Handymen Near You', sub:'No job too small — your local handyman pros.' },
-  'Roofing':     { icon:'🏠', keywords:['roof','shingle','gutter','leak','attic','skylight','chimney','flashing','ridge'], headline:'Roofers Near You', sub:'Expert roofers for repairs, replacements, and inspections.' },
-  'Cleaning':    { icon:'🧹', keywords:['clean','maid','sweep','mop','vacuum','sanitize','disinfect','deep clean','laundry','tidy','dust'], headline:'Cleaning Pros Near You', sub:'Professional cleaning services for homes and offices.' },
-  'Mechanical':  { icon:'⚙️', keywords:['mechanical','machine','engine','motor','gear','pump','compressor','hydraulic','pneumatic','conveyor'], headline:'Mechanical Contractors Near You', sub:'Expert mechanical contractors for commercial and residential systems.' },
-  'Painting':    { icon:'🖌️', keywords:['paint','coat','primer','wall','ceiling','exterior','interior','stain','brush','roller'], headline:'Painters Near You', sub:'Interior and exterior painting done right, on time.' },
-  'Carpentry':   { icon:'🪵', keywords:['carpent','wood','cabinet','frame','trim','baseboard','molding','stair','deck','custom'], headline:'Carpenters Near You', sub:'Custom woodwork, framing, and finish carpentry.' },
-  'Landscaping': { icon:'🌿', keywords:['landscap','lawn','mow','garden','tree','shrub','mulch','sod','irrigation','yard','grass'], headline:'Landscapers Near You', sub:'Full-service landscaping and lawn care for your property.' },
+  'Plumbing':   {
+    icon: '🔧', keywords: ['plumb','pipe','leak','drain','faucet','toilet','water heater','sink','sewer','flood','clog'],
+    headline: 'Plumbers Near You', sub: 'Licensed plumbers ready to fix leaks, clogs, and more.'
+  },
+  'Electrical': {
+    icon: '⚡', keywords: ['electric','wire','outlet','breaker','panel','light','switch','circuit','power','wiring','generator'],
+    headline: 'Electricians Near You', sub: 'Certified electricians for installs, repairs, and upgrades.'
+  },
+  'HVAC': {
+    icon: '❄️', keywords: ['hvac','heat','cool','ac','air','furnace','duct','ventil','thermostat','boiler','radiator'],
+    headline: 'HVAC Specialists Near You', sub: 'Keep your home comfortable year-round.'
+  },
+  'Handyman': {
+    icon: '🔨', keywords: ['handyman','fix','repair','assemble','install','door','window','drywall','paint','shelf','fence','deck'],
+    headline: 'Handymen Near You', sub: 'No job too small — your local handyman pros.'
+  },
+  'Roofing': {
+    icon: '🏠', keywords: ['roof','shingle','gutter','leak','attic','skylight','chimney','flashing','ridge'],
+    headline: 'Roofers Near You', sub: 'Expert roofers for repairs, replacements, and inspections.'
+  },
+  'Cleaning': {
+    icon: '🧹', keywords: ['clean','maid','sweep','mop','vacuum','sanitize','disinfect','deep clean','laundry','tidy','dust'],
+    headline: 'Cleaning Pros Near You', sub: 'Professional cleaning services for homes and offices.'
+  },
 };
 
 // ================================================================
@@ -1632,16 +1678,15 @@ const TRADE_MAP = {
 // Each contractor has a `trades` array matching TRADE_MAP keys.
 // ================================================================
 const CONTRACTORS = [
-  { id:1,  initials:'MR', name:'Mike Rodriguez',  trade:'Master Plumber',           trades:['Plumbing'],              location:'Brooklyn, NY',      color:'linear-gradient(135deg,#FF6B2B,#E05520)', about:'[Sample] Licensed plumber with broad residential experience. Available 7 days.', sample:true },
-  { id:2,  initials:'SJ', name:'Sarah Johnson',   trade:'Licensed Electrician',     trades:['Electrical'],            location:'Queens, NY',        color:'linear-gradient(135deg,#3B82F6,#1D4ED8)', about:'[Sample] NYC-licensed electrician. Panel upgrades, EV chargers, smart home wiring.', sample:true },
-  { id:3,  initials:'DW', name:'David Wilson',    trade:'HVAC Specialist',          trades:['HVAC'],                  location:'Manhattan, NY',     color:'linear-gradient(135deg,#10B981,#059669)', about:'[Sample] Certified HVAC technician. Installs, repairs, and seasonal tune-ups.', sample:true },
-  { id:4,  initials:'TM', name:'Tony Morales',    trade:'Handyman',                 trades:['Handyman'],              location:'The Bronx, NY',     color:'linear-gradient(135deg,#8B5CF6,#6D28D9)', about:'[Sample] General handyman — drywall, assembly, painting, door repairs, and more.', sample:true },
-  { id:5,  initials:'RC', name:'Rosa Chen',       trade:'Roofing Expert',           trades:['Roofing'],               location:'Staten Island, NY', color:'linear-gradient(135deg,#F59E0B,#D97706)', about:'[Sample] Residential roofing. Free inspections, shingles, gutters, skylights.', sample:true },
-  { id:6,  initials:'KP', name:'Karen Peters',    trade:'Professional Cleaner',     trades:['Cleaning'],              location:'Astoria, NY',       color:'linear-gradient(135deg,#EC4899,#BE185D)', about:'[Sample] Deep cleaning, move-in/out, recurring home cleaning. Eco-friendly products.', sample:true },
-  { id:7,  initials:'RL', name:'Ray Lopez',       trade:'Mechanical Contractor',    trades:['Mechanical'],            location:'Jersey City, NJ',   color:'linear-gradient(135deg,#64748B,#334155)', about:'[Sample] Commercial and residential mechanical systems. Pumps, motors, compressors.', sample:true },
-  { id:8,  initials:'AP', name:'Andre Patel',     trade:'Painter',                  trades:['Painting'],              location:'Hoboken, NJ',       color:'linear-gradient(135deg,#A78BFA,#7C3AED)', about:'[Sample] Interior and exterior painting. Clean, fast, and professional finish.', sample:true },
-  { id:9,  initials:'MW', name:'Mark Walsh',      trade:'Carpenter',                trades:['Carpentry'],             location:'Park Slope, NY',    color:'linear-gradient(135deg,#92400E,#78350F)', about:'[Sample] Custom woodwork, cabinets, trim, decks, and structural framing.', sample:true },
-  { id:10, initials:'LG', name:'Luis Garcia',     trade:'Landscaper',               trades:['Landscaping'],           location:'Flushing, NY',      color:'linear-gradient(135deg,#16A34A,#14532D)', about:'[Sample] Full lawn care, garden design, irrigation, and seasonal cleanup.', sample:true },
+  { id:1, initials:'MR', name:'Mike Rodriguez',  trade:'Master Plumber',        trades:['Plumbing'],           location:'Brooklyn, NY',  color:'linear-gradient(135deg,#FF6B2B,#E05520)', about:'15 years of plumbing experience across NYC. Licensed, bonded, and insured. Available 7 days a week including emergencies.' },
+  { id:2, initials:'SJ', name:'Sarah Johnson',   trade:'Licensed Electrician',  trades:['Electrical'],         location:'Queens, NY',    color:'linear-gradient(135deg,#3B82F6,#1D4ED8)', about:'NYC-licensed electrician specializing in residential panel upgrades, EV charger installs, and smart home wiring.' },
+  { id:3, initials:'DW', name:'David Wilson',    trade:'HVAC Specialist',       trades:['HVAC'],               location:'Manhattan, NY', color:'linear-gradient(135deg,#10B981,#059669)', about:'Certified HVAC tech with 10+ years. Installs, repairs, and seasonal tune-ups for heating and cooling systems.' },
+  { id:4, initials:'TM', name:'Tony Morales',    trade:'Handyman',              trades:['Handyman'],           location:'The Bronx, NY', color:'linear-gradient(135deg,#8B5CF6,#6D28D9)', about:'Your go-to handyman in the Bronx. Furniture assembly, drywall, painting, door repairs, and more.' },
+  { id:5, initials:'RC', name:'Rosa Chen',       trade:'Roofing Expert',        trades:['Roofing'],            location:'Staten Island, NY', color:'linear-gradient(135deg,#F59E0B,#D97706)', about:'Residential roofing specialist. Free inspections, shingle replacement, gutter cleaning, and skylight installs.' },
+  { id:6, initials:'KP', name:'Karen Peters',    trade:'Professional Cleaner',  trades:['Cleaning'],           location:'Astoria, NY',   color:'linear-gradient(135deg,#EC4899,#BE185D)', about:'Deep cleaning, move-in/move-out, and recurring home cleaning. Eco-friendly products available on request.' },
+  { id:7, initials:'JL', name:'James Lee',       trade:'Plumber & Handyman',    trades:['Plumbing','Handyman'],location:'Flushing, NY',  color:'linear-gradient(135deg,#FF6B2B,#8B5CF6)', about:'Dual-skilled in plumbing and general handyman work. One call, two problems solved.' },
+  { id:8, initials:'AN', name:'Alex Nunez',      trade:'Master Electrician',    trades:['Electrical'],         location:'Harlem, NY',    color:'linear-gradient(135deg,#06B6D4,#0284C7)', about:'20 years wiring NYC apartments and brownstones. Specializes in service upgrades and code compliance.' },
+  { id:9, initials:'BT', name:'Brian Torres',    trade:'HVAC & Plumbing',       trades:['HVAC','Plumbing'],    location:'Sunset Park, NY',color:'linear-gradient(135deg,#10B981,#3B82F6)', about:'Combined HVAC and plumbing contractor. Great for boiler work, radiant heat, and water heater swaps.' },
 ];
 
 // ================================================================
@@ -1721,20 +1766,19 @@ function showResultsPage(trade, rawQuery) {
 }
 
 function renderContractorCard(c) {
-  const sampleBadge = c.sample ? `<span style="background:rgba(255,107,43,.12);color:var(--orange);font-size:10px;font-weight:800;padding:2px 7px;border-radius:4px;letter-spacing:.06em;text-transform:uppercase;margin-left:6px;vertical-align:middle;">Sample</span>` : '';
   return `
   <div class="card contractor-card" onclick="openProfile(${c.id})" style="cursor:pointer;">
     <div class="contractor-card-header">
       <div class="avatar" style="background:${c.color};">${c.initials}</div>
       <div>
-        <div class="contractor-name">${c.name}${sampleBadge}</div>
+        <div class="contractor-name">${c.name}</div>
         <div class="contractor-trade">${c.trade}</div>
       </div>
     </div>
     <div class="contractor-meta" style="margin-bottom:16px;">
       <span>📍</span><span>${c.location}</span>
     </div>
-    <p style="font-size:13px;line-height:1.6;color:var(--ink-soft);margin-bottom:16px;">${(c.about||'').replace('[Sample] ','').substring(0,90)}…</p>
+    <p style="font-size:13px;line-height:1.6;color:var(--ink-soft);margin-bottom:16px;">${c.about.substring(0,90)}…</p>
     <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="event.stopPropagation();openBooking(${c.id})">
       Book Now
     </button>
@@ -1751,114 +1795,12 @@ function openProfile(id) {
   activeContractor = list.find(c => c.id === id || c.id === String(id));
   if (!activeContractor) return;
   const c = activeContractor;
-
-  // Basic info from local list
-  document.querySelector('.profile-name')  && (document.querySelector('.profile-name').textContent  = c.name);
-  document.getElementById('profile-display-name').textContent  = c.name;
-  document.getElementById('profile-display-trade').textContent = c.trade + (c.location ? ' · ' + c.location : '');
-  document.getElementById('profile-display-loc').textContent   = c.location ? '📍 ' + c.location : '';
+  document.querySelector('.profile-name').textContent = c.name;
+  document.querySelector('.profile-trade').textContent = c.trade + ' · ' + c.name + ' LLC';
+  document.querySelector('.profile-loc').textContent = '📍 ' + c.location;
   document.querySelector('.profile-avatar-lg').style.background = c.color;
-  document.querySelector('.profile-avatar-lg').textContent      = c.initials;
-  // Sample badge
-  const badgesEl = document.getElementById('profile-badges');
-  if (badgesEl) {
-    badgesEl.innerHTML = c.sample
-      ? `<span class="badge badge-grey" style="background:rgba(255,107,43,.1);color:var(--orange);border:1px solid rgba(255,107,43,.25);">⚠️ Sample Profile</span>`
-      : '';
-  }
-
-  // Reset dynamic sections
-  document.getElementById('profile-about-text').textContent = c.about || 'No description added yet.';
-  document.getElementById('profile-rating-val').textContent  = 'New';
-  document.getElementById('profile-stars').textContent       = '☆☆☆☆☆';
-  document.getElementById('profile-reviews-ct').textContent  = '— be the first to review';
-  document.getElementById('profile-reviews-list').innerHTML  = '<div style="padding:24px;text-align:center;color:var(--ink-soft);font-size:14px;">Loading reviews…</div>';
-  document.getElementById('profile-stats-section').style.display = 'none';
-  document.getElementById('profile-portfolio-section').style.display = 'none';
-
+  document.querySelector('.profile-avatar-lg').textContent = c.initials;
   goTo('profile');
-
-  // Load full profile + reviews from Supabase async
-  loadFullProfile(id);
-}
-
-async function loadFullProfile(id) {
-  // Fetch full contractor row
-  const { data: p } = await sb.from('contractors')
-    .select('*')
-    .eq('id', String(id))
-    .single();
-
-  if (p) {
-    // Description
-    if (p.description) {
-      document.getElementById('profile-about-text').textContent = p.description;
-    }
-
-    // Rating
-    if (p.review_count > 0 && p.rating) {
-      const stars = '★'.repeat(Math.round(p.rating)) + '☆'.repeat(5 - Math.round(p.rating));
-      document.getElementById('profile-stars').textContent     = stars;
-      document.getElementById('profile-rating-val').textContent = p.rating.toFixed(1);
-      document.getElementById('profile-reviews-ct').textContent = '(' + p.review_count + ' review' + (p.review_count !== 1 ? 's' : '') + ')';
-    }
-
-    // Stats — only show real data
-    const statsRow = document.getElementById('profile-stats-row');
-    const statsSection = document.getElementById('profile-stats-section');
-    const statItems = [];
-    if (p.total_bookings > 0)  statItems.push({ val: p.total_bookings,     lbl: 'Jobs' });
-    if (p.profile_views > 0)   statItems.push({ val: p.profile_views,      lbl: 'Profile Views' });
-    if (p.rating && p.review_count > 0) statItems.push({ val: p.rating.toFixed(1) + ' ⭐', lbl: 'Rating' });
-    if (p.experience)          statItems.push({ val: p.experience,          lbl: 'Experience' });
-    if (statItems.length > 0) {
-      statsRow.innerHTML = statItems.map(s => `
-        <div class="stat-box">
-          <div class="stat-box-val">${s.val}</div>
-          <div class="stat-box-lbl">${s.lbl}</div>
-        </div>`).join('');
-      statsSection.style.display = 'block';
-    }
-
-    // Portfolio
-    const portfolio = Array.isArray(p.portfolio) ? p.portfolio : [];
-    if (portfolio.length > 0) {
-      document.getElementById('profile-portfolio-grid').innerHTML = portfolio.map(url =>
-        `<div class="portfolio-img" style="background:var(--border);">
-           <img src="${url}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" loading="lazy" onerror="this.parentElement.style.display='none'"/>
-         </div>`
-      ).join('');
-      document.getElementById('profile-portfolio-section').style.display = 'block';
-    }
-  }
-
-  // Load real reviews
-  const { data: reviews } = await sb.from('reviews')
-    .select('*')
-    .eq('contractor_id', String(id))
-    .order('created_at', { ascending: false })
-    .limit(5);
-
-  const revList = document.getElementById('profile-reviews-list');
-  if (!reviews || reviews.length === 0) {
-    revList.innerHTML = '<div style="padding:24px;text-align:center;color:var(--ink-soft);font-size:14px;">No reviews yet — book this contractor to be the first!</div>';
-    return;
-  }
-  revList.innerHTML = reviews.map(r => {
-    const stars = '★'.repeat(r.rating || 5) + '☆'.repeat(5 - (r.rating || 5));
-    const date  = r.created_at ? new Date(r.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : '';
-    return `
-      <div class="card review-card">
-        <div class="review-header">
-          <div>
-            <div class="reviewer-name">${r.reviewer_name || 'Customer'}</div>
-            <div class="stars" style="font-size:13px;">${stars}</div>
-          </div>
-          <div class="review-date">${date}</div>
-        </div>
-        <div class="review-text">${r.review_text || ''}</div>
-      </div>`;
-  }).join('');
 }
 
 // ================================================================
@@ -2117,7 +2059,7 @@ async function submitBooking() {
   // Require login to book
   if (!currentUser) {
     showToast('🔐 Please log in to book a contractor.');
-    setTimeout(() => { sessionStorage.setItem('auth_intentional','1'); window.location.href = './tradease-auth.html'; }, 400);
+    setTimeout(() => { sessionStorage.setItem('auth_intentional','1'); window.location.href = './tradease-auth.html'; }, 1500);
     return;
   }
 
